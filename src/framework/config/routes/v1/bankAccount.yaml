@@ -1,0 +1,3 @@
+bank_account_index:
+  path: /
+  controller: SymfonyFramework\Controller\BankAccountController::index

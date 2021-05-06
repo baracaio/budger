@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  app.budger.app:
+    container_name: app.budger.app
+    build:
+      context: .
+      dockerfile: build/php/Dockerfile
+    volumes:
+      - ./src:/app:rw
+    expose:
+      - 9000
+
+  nginx.budger.app:
+    container_name: nginx.budger.app
+    build:
+      context: .
+      args:
+        APP_STAGE: "dev"
+      dockerfile: build/nginx/Dockerfile
+    volumes:
+      - ./src:/app
+    ports:
+      - 10010:80

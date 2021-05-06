@@ -1,0 +1,3 @@
+bank_account:
+  prefix: /bank-account
+  resource: v1/bankAccount.yaml
